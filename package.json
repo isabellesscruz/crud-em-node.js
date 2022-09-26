@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "mysql": "^2.18.1"
+  },
+  "name": "crud-em-node",
+  "version": "1.0.0",
+  "main": "index.ejs",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isabellesscruz/crud-em-node.js.git"
+  },
+  "keywords": [
+    "crud"
+  ],
+  "author": "isabelle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isabellesscruz/crud-em-node.js/issues"
+  },
+  "homepage": "https://github.com/isabellesscruz/crud-em-node.js#readme",
+  "description": ""
+}
