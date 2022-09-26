@@ -1,0 +1,23 @@
+<%- include('head.ejs') %>
+
+    <body>
+        <form action="inserir" method="post">
+            <div>
+                <label for="">Nome</label>
+                <input class="form-control" type="text" name="nome" value="<%= colecao.nome %>">
+            </div>
+            <div>
+                <label for="">Endereço</label>
+                <input class="form-control" type="text" name="endereco" value="<%= colecao.endereco %>">
+            </div>
+            <div>
+                <label for="">Data Nascimento</label>
+                <input class="form-control" type="text" name="datanascimento" value="<%= colecao.datanascimento %>">
+            </div>
+            <br>
+            <input type="submit" value="inserir">
+            <a href="/">Voltar</a>
+        </form>
+    </body>
+
+    </html>
