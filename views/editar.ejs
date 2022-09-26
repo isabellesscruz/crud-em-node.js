@@ -1,7 +1,7 @@
 <%- include('head.ejs') %>
 
     <body>
-        <form action="editar" method="put">
+        <form action="<%=colecao.matricula%>" method="post">
             <div>
                 <label for="">Nome</label>
                 <input class="form-control" type="text" name="nome" value="<%= colecao.nome %>">

@@ -45,7 +45,7 @@ function editaPessoa(pessoa) {
     pessoa.getMatricula(),
   ];
   let sql =
-    "UPDATE bd_faculdade.pessoa SET nome='?', endereco='?', datanascimento='?' WHERE matricula =?";
+    "UPDATE bd_faculdade.pessoa SET nome=?, endereco=?, datanascimento=? WHERE matricula =?";
   db.query(sql, params, function (err) {});
 }
 module.exports = {

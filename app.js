@@ -32,7 +32,7 @@ app.get("/delete/:matricula", function (req, res) {
 });
 
 app.get("/editar/:matricula", function (req, res) {
-  res.render("inserir.ejs", { colecao: {} });
+  res.render("editar.ejs", { colecao: {} });
 });
 app.post("/editar/:matricula", async function (req, res) {
   const pessoa = new Pessoa(
