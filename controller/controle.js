@@ -31,7 +31,26 @@ function inserePessoa(pessoa) {
     "INSERT INTO bd_faculdade.pessoa (nome, endereco, datanascimento) VALUES (?,?,?)";
   db.query(sql, params, function (err) {});
 }
+
+function removePessoa(matricula) {
+  let sql = "DELETE FROM bd_faculdade.pessoa where matricula=?";
+  db.query(sql, [matricula], function (err) {});
+}
+
+function editaPessoa(pessoa) {
+  const params = [
+    pessoa.getNome(),
+    pessoa.getEndereco(),
+    pessoa.getDatanascimento(),
+    pessoa.getMatricula(),
+  ];
+  let sql =
+    "UPDATE bd_faculdade.pessoa SET nome='?', endereco='?', datanascimento='?' WHERE matricula =?";
+  db.query(sql, params, function (err) {});
+}
 module.exports = {
   mostraPessoa: mostraPessoa,
   inserePessoa: inserePessoa,
+  removePessoa: removePessoa,
+  editaPessoa: editaPessoa,
 };
