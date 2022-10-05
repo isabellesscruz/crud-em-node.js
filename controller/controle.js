@@ -2,7 +2,7 @@ const Pessoa = require("../model/Pessoa.js");
 var db = require("./db.js");
 var pessoa;
 async function mostraPessoa() {
-  let listaPessoa = new Array();
+  let listaPessoa = [];
   return new Promise((registros, reject) => {
     db.query(
       "SELECT matricula, nome, endereco, datanascimento FROM Pessoa",
@@ -12,8 +12,33 @@ async function mostraPessoa() {
           pessoa.setMatricula(item.matricula);
           pessoa.setNome(item.nome);
           pessoa.setEndereco(item.endereco);
+          console.log(item);
           pessoa.setDatanascimento(item.datanascimento);
           listaPessoa.push(pessoa);
+        }
+        registros(listaPessoa);
+      }
+    );
+  });
+}
+
+const Professor = require("../model/Professor.js");
+var db = require("./db.js");
+var professor;
+async function mostraProfessor() {
+  let listaProfessor = [];
+  return new Promise((registros, reject) => {
+    db.query(
+      "SELECT * FROM professor, pessoa where matricula_pro=FK_pessoa ORDER BY matricula_pro desc",
+      async function (error, colecao) {
+        for (const item of colecao) {
+          professor = new Professor();
+          professor.setID(item.id_professor);
+          professor.setFormacao(item.formacao);
+          professor.setSalario(item.salario);
+          console.log(item);
+          professor.setMatricula_pro(item.matricula_pro);
+          listaProfessor.push(professor);
         }
         registros(listaPessoa);
       }
