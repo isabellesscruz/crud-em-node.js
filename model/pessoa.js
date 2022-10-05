@@ -31,10 +31,16 @@ class Pessoa {
         this.endereco = value; 
     }
     getDatanascimento() {
+        console.log(this.datanascimento);
         return this.datanascimento; 
     }
     setDatanascimento(value) {
-        this.datanascimento = value; 
+        const date = new Date(value)
+        const day = date.getDay()
+        const month = date.getMonth() + 1;
+        const year = date.getFullYear()
+        const fulldate = `${day}/${month}/${year}` 
+        this.datanascimento = fulldate; 
     }
 }
 module.exports = Pessoa;
